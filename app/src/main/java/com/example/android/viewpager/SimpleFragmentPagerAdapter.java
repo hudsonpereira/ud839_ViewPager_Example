@@ -30,17 +30,24 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            return new MondayFragment();
-        } else if (position == 1){
-            return new TuesdayFragment();
-        } else {
-            return new WednesdayFragment();
+        switch (position) {
+            case 0:
+                return new MondayFragment();
+            case 1:
+                return new TuesdayFragment();
+            case 2:
+                return new WednesdayFragment();
+            case 3:
+                return new ThursdayFragment();
+            case 4:
+                return new FridayFragment();
         }
+
+        return null;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 }
